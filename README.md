@@ -1,15 +1,22 @@
-# Microlab speaker remote controller hijack
+# Microlab speaker auto start
 
-Compiled under *avr-gcc*, *CMake* required. *burn.sh* - flashing.
+Compiled under *avr-gcc*, *CMake* required.
 
 TODO website
 
-## Programming
-
-compile and run:
+## Compile
 
 ```
- micronucleus --run build/microlab-speaker-remote-hijack.hex
+mkdir -p build
+cd build
+cmake ..
+make
+```
+
+## Program the Digispark
+
+```
+micronucleus --run microlab-speaker-remote-hijack.hex
 ```
 
 Then plug the Digispark module. It is programmed.
