@@ -1,8 +1,8 @@
 # Microlab speaker auto start
 
-Compiled under *avr-gcc*, *CMake* required.
+You'll find more info on https://slomkowski.eu/projects/microlab-speakers-remote-hijack/.
 
-TODO website
+Compiled under *avr-gcc*, *CMake* required.
 
 ## Compile
 
