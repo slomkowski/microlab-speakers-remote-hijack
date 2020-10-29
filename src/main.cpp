@@ -1,6 +1,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/sleep.h>
+#include <avr/wdt.h>
 
 constexpr uint16_t ADDRESS = 0xfe01;
 constexpr uint16_t COMMAND_POWER = 0xfc03;
@@ -53,6 +54,8 @@ int main() {
     DDRB |= _BV(1);
     PORTB &= ~_BV(0);
 
+    wdt_disable();
+
     carrierTurnOff();
 
     _delay_ms(10.0);
@@ -65,6 +68,8 @@ int main() {
 
     sendNecCode(ADDRESS, COMMAND_SWITCH_INPUT);
 
-    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
-    sleep_enable();
+    while (true) {
+        set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+        sleep_enable();
+    }
 }
